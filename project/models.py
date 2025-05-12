@@ -26,15 +26,6 @@ class Student(AbstractUser):
     def __str__(self):
         return f'{self.last_name} {self.username}'
 
-class Promocode(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    code = models.CharField(max_length=255, null=True, blank=True)
-    procent = models.CharField(max_length=255, null=True, blank=True)
-    count = models.CharField(max_length=255, null=True, blank=True)
-
-    def __str__(self):
-        return self.code
-
 class Course(models.Model):
     name = models.CharField(max_length=255, null=True, blank=True)
     description = models.CharField(max_length=25555, null=True, blank=True)

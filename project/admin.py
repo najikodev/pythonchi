@@ -3,12 +3,6 @@ from .models import *
 from django.utils.html import format_html
 
 
-@admin.register(Promocode)
-class PromocodeAdmin(admin.ModelAdmin):
-    list_display = ("student", "code", "procent", "count")
-    search_fields = ("count", "procent",)
-    list_filter = ("count", "procent",)
-
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     list_display = ("username", "last_name", "number", "address", "age", "edu_name", "about", "telegram_chat_id", "telegram", "linkedin", "github", "password")
